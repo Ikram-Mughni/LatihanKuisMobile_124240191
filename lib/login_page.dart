@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'library_page.dart';
+import 'root.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -24,10 +24,11 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         isLoginFailed = false;
       });
+      // Menggunakan pushReplacement untuk menuju ke RootPage
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => LibraryPage(username: email),
+          builder: (context) => RootPage(username: email),
         ),
       );
     } else {
@@ -128,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                   icon: Icons.lock,
                   obscureText: true,
                 ),
-                const SizedBox(height: 20), 
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: _login,
                   style: ElevatedButton.styleFrom(

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'bookModels.dart';
 import 'detail_page.dart';
-import 'login_page.dart';
 
-class LibraryPage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   final String username;
 
-  const LibraryPage({super.key, required this.username});
+  const HomePage({super.key, required this.username});
 
   @override
   Widget build(BuildContext context) {
@@ -19,19 +18,6 @@ class LibraryPage extends StatelessWidget {
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            tooltip: 'Logout',
-            onPressed: () {
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginPage()),
-                (route) => false,
-              );
-            },
-          ),
-        ],
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(12.0),
